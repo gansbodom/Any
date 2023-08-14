@@ -58,3 +58,14 @@ df_new['pain'] = df_new['pain'].fillna(df_new['pain'].median())
 df_new['outcome'] = df_new['outcome'].fillna(df['outcome'].median())
 
 print(f'Доля пропусков нового фрейма: \n{(df_new.isna().mean() * 100).round(2)}')  # Доля пропусков
+print((df_new.isna().mean() * 100).round(2))
+
+#Экспорт в excel
+#writer = pd.ExcelWriter('output.xlsx')
+#df_new.to_excel(writer)
+#writer._save()
+
+# pulse связать с возрастом
+# temperature_of_extremities кореллирует с rectal_temperature
+# pain медиана по rectal_temperature
+# outcome - медиана по возрасту, surgery
